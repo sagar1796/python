@@ -5,13 +5,22 @@ while True:
     
     match user_action:
         case "add":
-            todo=input("Enter a todo")
+            todo=input("Enter a todo") +"\n"
+            file=open("app1\\todos.txt","r")
+            todos=file.readlines()
+            file.close()
             todos.append(todo)
+            
+            file=open("app1\\todos.txt","w")
+            file.writelines(todos)
+            file.close()
         case "show":
-            print(todos)
+              for index,item in enumerate(todos):
+                print(f"{index}-{item}")
+                print(f"lenght of list is {index+1}")
         case "completed":
             completed=int(input("enter your number you've completed :"))
-            del todos[completed-1]
+            todos.pop(completed-1)
         case "exit":
             break
         case _:

@@ -1,3 +1,6 @@
-a=frozenset([1,2,3,4])
-a.add(5)
-print(a) # will get an error
+var="vickey"
+b=3.2343
+my_string=f"your name is {var}"
+
+
+print(my_string)
